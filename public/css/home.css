@@ -1,0 +1,311 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.header-primario {
+    height: 38px;
+    background-color: #0a0a23;
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.caixa-de-pesquisa {
+    margin: 0 auto;
+    top: 2px;
+    left: 25px;
+    margin-top: 4px;
+    position: absolute;
+    height: 26px;
+    width: 500px;
+    background-color: #3b3b4f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    height: 26px;
+    width: 500px;
+    padding-left: 30px;
+    padding-right: 10px;
+    display: flex;
+}
+form ::placeholder {
+    font-size: 18px;
+    color:white;
+}
+form input {
+    font-size: 18px;
+    background-color: transparent;
+    flex: 1;
+    border: none;
+    outline: none;
+    color: white;
+}
+.header-primario .caixa-de-pesquisa button {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.header-primario .caixa-de-pesquisa button img {
+    width: 17px;
+    height: 17px;
+}
+.logo svg {
+    margin-top: 7px;
+}
+
+.header-primario .botoes-Header {
+    position: absolute;
+    text-align: right;
+    width: 33%;
+    height: 26px;
+    top: 0px;
+    right: 0px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.menu-btn {
+    position: relative;
+    margin: 0 auto;
+    background-color: #0a0a23;
+    color: white;
+    border: 1px solid white;
+    font-size: 18px;
+    width: 76px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.mobileIcons {
+    display: none;
+}
+
+.sign-in-btn {
+    position: relative;
+    margin: 0 auto;
+    background-color: #3b3b4f;
+    color: white;
+    border: 1px solid white;
+    font-size: 18px;
+    width: 106px;
+    height: 32px;
+    color: black;
+    background-color: #feac32;
+    background-image: linear-gradient(#fecc4c,#ffac33);
+    border-color: #feac32;
+    border-top-color: rgb(254, 172, 50);
+    border-right-color: rgb(254, 172, 50);
+    border-bottom-color: rgb(254, 172, 50);
+    border-left-color: rgb(254, 172, 50);
+    border-width: 3px;
+    cursor: pointer;
+}
+
+body, html{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+}
+.container {
+    width: 60%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.landing-top {
+    width: 100%;
+    height: 100%;
+    padding-top: 3%;
+    padding-bottom: 6.7%;
+}
+.row {
+    width: 100%;
+    height: 100%;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 30px;
+}
+.primeiraColuna {
+    width: 65.7%;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 195px;
+    position: relative;
+}
+.primeiraColuna h1 {
+    color: black;
+    font-size: 45px;
+}
+.primeiraColuna p {
+    color: black;
+    font-size: 22px;
+}
+.logos {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;;
+}
+.logos svg {
+    height: 80%;
+}
+.get-started {
+    text-align: center;
+    height: 50px;
+    margin-left: 125px;
+    margin-right: 125px;
+    padding: 5px;
+    padding-bottom: 35px;
+
+}
+.getStartedBtn {
+    position: block;
+    margin: 0 auto;
+    color: white;
+    border: 3px solid white;
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+    color: black;
+    background-color: #feac32;
+    background-image: linear-gradient(#fecc4c,#ffac33);
+    border-color: #feac32;
+    border-top-color: rgb(254, 172, 50);
+    border-right-color: rgb(254, 172, 50);
+    border-bottom-color: rgb(254, 172, 50);
+    border-left-color: rgb(254, 172, 50);
+    border-width: 3px;
+    cursor: pointer;
+}
+.imagem-reuniao-primeira-coluna p {
+    margin: 0px;
+    font-size: 22.5px;
+    text-align: center;
+}
+
+select{
+    font-size: 25px;
+    margin-top: 10px;
+    display: none;
+}
+
+
+
+
+
+@media only screen and (max-width: 360px) {
+    .caixa-de-pesquisa {display: none;}
+    .logo svg {float: left; width: 157px; height: 18px; margin-top: 10px;}
+    .menu-btn {display: none;}
+    .sign-in-btn {display:none;}
+    .mobileIcons {display: flex; float: right;}
+    .imagem-reuniao-primeira-coluna, .imagem-reuniao-primeira-coluna p {display: none;}
+
+    .header-primario .botoes-Header .menu-btn-mobile {
+        position: relative;
+        background-color: #0a0a23;
+        color: white;
+        border: 1px solid white;
+        width: 35px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .header-primario .botoes-Header .menu-btn-mobile svg {
+        width: auto;
+        height: auto;
+    }
+    .header-primario .botoes-Header .sign-in-btn-mobile {
+        position: relative;
+        background-color: #0a0a23;
+        color: black;
+        border: 1px solid white;
+        background-color: #feac32;
+        background-image: linear-gradient(#fecc4c,#ffac33);
+        border-color: #feac32;
+        border-top-color: rgb(254, 172, 50);
+        border-right-color: rgb(254, 172, 50);
+        border-bottom-color: rgb(254, 172, 50);
+        border-left-color: rgb(254, 172, 50);
+        border-width: 3px;
+        width: 35px;
+        height: 30px;
+        right: 0px;
+    }
+    .header-primario .botoes-Header .sign-in-btn-mobile svg {
+        width: auto;
+        height: auto;
+    }
+
+    .getStartedBtn {
+        font-size: 23.4px;
+    }
+    .landing-page, .container, .landing-top, .row, .primeiraColuna {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;;
+    }
+    .primeiraColuna {
+        width: 100%;
+        height: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 30px;
+    }
+    .primeiraColuna h1 {
+        font-size: 27px;
+        padding-bottom: 51px;
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+    .primeiraColuna p {
+        font-size: 21.6px;
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    .logos {
+        padding: 0px;
+        margin: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 330px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 30px;
+    }
+    .get-started {
+        width: 330px;
+        height: 83px;
+        position: block;
+        margin: 0;
+        padding-bottom: 0;
+    }
+}
+
+            

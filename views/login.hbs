@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" contet="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/css/login.css" type="text/css" media="screen" charset="utf-8">
+        <title>{{title}}</title>
+        <body>
+            <form action="/login" method="POST" id="loginForm">
+                <div id="login_box" class="login">
+                    <div id="Logincontainer" class="Logincontainer">
+                        <label for="email" id="email"><b>Email</b></label>
+                        <input id="inputEmail" type="text" placeholder="Digite seu email" name="email" required>
+                        <h5 class="alertaErro">{{usuario.emailIncorretoErro}}</h5>
+                        <label for="psw" id="psw"><b>Senha</b></label>
+                        <input id="inputPsw" type="password" placeholder="Digite sua senha" name="password" required>
+                        <h5 class="alertaErro">{{usuario.senhaIncorretaErro}}</h5>
+                        <button id="submit_buton" type="submit" class="submit_btn"> Login</button>
+                        <a href="/register">Não tem conta? Registre-se</a>
+                    </div>
+                </div>
+            </form>
+        </body>
+    </head>
+</html>
