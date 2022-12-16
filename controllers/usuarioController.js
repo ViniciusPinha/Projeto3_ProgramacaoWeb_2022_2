@@ -73,19 +73,23 @@ router.get('/inserirFuncionario', async (req,res) => {
 
 router.post('/inserirFuncionario', async (req, res) => {
     try {
-        const funcionarios = await Funcionario.findOne({ emailFuncionario: req.body.nomeCompleto})
+        const funcionarios = await Funcionario.findOne({ emailFuncionario: req.body.emailFuncionario})
         if(funcionarios) {
-            res.render("inserirFuncionario", {title: "Cadastrar Funcionário", emailFuncionarioErro: "Este funcionário já está cadastrado!"});
-            return false;
+            res.render("inserirFuncionario", {title: "Cadastrar Funcionário", emailFuncionarioErro: "Este email de funcionário já está cadastrado!"});
         } else {
             var funcionario = new Funcionario();
             funcionario.nomeCompleto = req.body.nomeCompleto;
             funcionario.emailFuncionario = req.body.emailFuncionario;
             funcionario.fotoDePerfil = req.body.fotoDePerfil;
-            funcionario.save();
-            res.render((err, doc) => {
+            funcionario.save((err, doc) => {
                 if (!err) {
-                    res.render('buscas');
+                    Funcionario.find((err, docs) => {
+                        if(!err) {
+                            res.render("buscas", {
+                                list: docs
+                            });
+                        }
+                    })
                 }else {
                     if (err.name == 'ValidationError') {
                         validacaoDeErrosFuncionario(err, req.body);
@@ -97,7 +101,7 @@ router.post('/inserirFuncionario', async (req, res) => {
             });
         }
     } catch (err) {
-        res.status(500).send("Server error: " + err.message);
+        res.status(500).send("Server error: " + err);
         return false;
     }
 });
@@ -133,6 +137,18 @@ router.get('/buscas/:id', async (req, res) => {
     }
 });
 
+router.get('/buscas', async (req, res) => {
+    Funcionario.find((err, docs) => {
+        if(!err) {
+            res.render("buscas", {
+                list: docs
+            });
+        } else {
+            console.log('Erro na busca de funcionários: ' + err);
+        }
+    })
+})
+
 function inserirFuncionario(req, res) {
     var funcionario = new Funcionario();
     funcionario.nomeCompleto = req.body.nomeCompleto;
@@ -153,7 +169,7 @@ function inserirFuncionario(req, res) {
         }
     });
 }
-
+/*
 async function emailExistenteUsuario(req, res) {
     try {
         const user = await Usuario.findOne({ email: req.body.email });
@@ -168,7 +184,7 @@ async function emailExistenteUsuario(req, res) {
     } catch (err) {
         res.status(500).send("Server error: " + err.message);
     }
-}
+}*/
 
 function validacaoDeErrosUsuario(err, body) {
     console.log(' entrou na validação de erro')
@@ -200,6 +216,9 @@ function validacaoDeErrosFuncionario(err, body) {
                 body['emailFuncionarioErro'] = 'Email Inválido, tente novamente!';
                 console.log('Erro Email Funcionário');
                 break;
+            case 'fotoDePerfil':
+                body['fotoDePerfilErro'] = 'Por favor, utilize o endereço da imagem!';
+                console.log('Erro foto de perfil Funcionário');
             default:
                 break;
         }
