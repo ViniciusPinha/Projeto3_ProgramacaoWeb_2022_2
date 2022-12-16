@@ -8,7 +8,8 @@ var usuarioSchema = new mongoose.Schema({
         required: 'This field is required.'
     },
     password: {
-        type: String
+        type: String,
+        required: 'This field is required.'
     }
 });
 
@@ -28,5 +29,5 @@ usuarioSchema.pre('save', async function(req, res, next) {
     next();    
 });
 
-
 mongoose.model('Usuario', usuarioSchema);
+

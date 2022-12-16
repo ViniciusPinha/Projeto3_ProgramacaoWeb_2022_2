@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" contet="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/css/inserirFuncionario.css" type="text/css" media="screen" charset="utf-8">
+        <title>{{title}}</title>
+        <body>
+            <form action="/inserirfuncionario" method="POST" id="loginForm">
+                <div id="login_box" class="login">
+                    <div id="Logincontainer" class="Logincontainer">
+                        <label for="nomeCompleto" id="nomeCompleto"><b>Nome Completo</b></label>
+                        <input id="inputNomeCompleto" type="text" placeholder="Digite seu nome completo" name="nomeCompleto" required>
+                        <h5 class="alertaErro">{{funcionario.nomeCompletoErro}}</h5>
+                        <h5 class="alertaErro">{{nomeCompletoErro}}</h5>
+
+                        <label for="emailFuncionario" id="emailFuncionario"><b>Email</b></label>
+                        <input id="inputemailFuncionario" type="text" placeholder="Digite seu email" name="emailFuncionario" required>
+                        <h5 class="alertaErro">{{funcionario.emailFuncionarioErro}}</h5>
+                        <h5 class="alertaErro">{{emailFuncionarioErro}}</h5>
+
+                        <label for="fotoDePerfil" id="fotoDePerfil"><b>Foto de Perfil</b></label>
+                        <input id="inputfotoPerfil" type="text" placeholder="Cole o link da sua foto de perfil" name="fotoDePerfil" required>
+                        
+                        <button id="submit_buton" type="submit" class="submit_btn"> Cadastrar Funcionário</button>
+                        <a href="/buscas"><button type="button" class="cancelbtn">Voltar a listagem de funcionário</button></a>
+                    </div>
+                </div>
+            </form>
+        </body>
+    </head>
+</html>

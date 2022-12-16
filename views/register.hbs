@@ -12,9 +12,11 @@
                         <label for="email" id="email"><b>Email</b></label>
                         <input id="inputEmail" type="text" placeholder="Digite seu email" name="email" required>
                         <h5 class="alertaErro">{{usuario.emailErro}}</h5>
+                        <h5 class="alertaErro">{{emailExistenteErro}}</h5>
                         <label for="psw" id="psw"><b>Senha</b></label>
                         <input id="inputPsw" type="password" placeholder="Digite sua senha" name="password" required>
-                        <h5 class="alertaErro">{{usuario.SenhaErro}}</h5>
+                        <h5 class="alertaErro">{{usuario.senhaErro}}</h5>
+                        <h5 class="alertaErro">{{senhaIncorretaErro}}</h5>
                         <button id="submit_buton" type="submit" class="submit_btn"> Registrar</button>
                         <a href="/login"><button type="button" class="cancelbtn">Voltar ao Login</button></a>
                     </div>

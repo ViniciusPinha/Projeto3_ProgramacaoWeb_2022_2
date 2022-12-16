@@ -9,3 +9,4 @@ mongoose.connect('mongodb+srv://viniciuspinha:mongodb123@cluster0.plo4ywk.mongod
     }
 });
 require('./modeloUsuario.model')
+require('./modeloFuncionario.model')
