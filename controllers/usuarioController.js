@@ -54,15 +54,6 @@ router.post('/register', async(req, res) => {
     } catch (err) {
         res.status(500).send("Server error: " + err.message);
     }
-
-
-    /*
-    if(validacaoDeErrosUsuario) {
-    }else if(emailExistenteUsuario) {
-            res.render('login', {title: "Login"});
-    } else {
-        console.log('ERRO NO CADASTRO DE USUÁRIOS')
-    }*/
 })
 
 router.get('/inserirFuncionario', async (req,res) => {
@@ -169,22 +160,6 @@ function inserirFuncionario(req, res) {
         }
     });
 }
-/*
-async function emailExistenteUsuario(req, res) {
-    try {
-        const user = await Usuario.findOne({ email: req.body.email });
-        if(user) {
-            res.render("register",{title: "Registre-se", emailExistenteErro: "Email já em uso, por favor realize login!" });
-        } else {
-            var usuario = new Usuario();
-            usuario.email = req.body.email;
-            usuario.password = req.body.password;
-            usuario.save();
-        }
-    } catch (err) {
-        res.status(500).send("Server error: " + err.message);
-    }
-}*/
 
 function validacaoDeErrosUsuario(err, body) {
     console.log(' entrou na validação de erro')
