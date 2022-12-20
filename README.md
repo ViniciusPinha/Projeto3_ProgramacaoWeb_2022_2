@@ -3,7 +3,7 @@ Projeto 3 da disciplina de Programação Web, ministrada pelo Prof Dr Willian Ma
 
 No projeto 3, o intuito é implementar as mesmas ações das API do Projeto 2 porém desta vez utilizando Node Js, Express e MongoDB.
 
-Projeto hospedado no Heroku: https://projeto3-web-viniciuspinha.herokuapp.com/
+Projeto hospedado no Glith.com: https://projeto3-devweb-viniciuspinha.glitch.me
 
 Usuário já adicionado no banco de dados:
 
