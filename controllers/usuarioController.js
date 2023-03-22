@@ -110,7 +110,13 @@ router.post('/login', async (req, res) => {
             res.render('login', {title: "Login", senhaIncorretaErro: "Senha incorreta!" });
         } else {
             // REALIZAR ARMAZENAMENTO EM TOKEN E SESSION PARA MANTER LOGADO AO ATUALIZAR A PÁGINA
-            res.render('buscas');
+            Funcionario.find((err, docs) => {
+                if(!err) {
+                    res.render("buscas", {
+                        list: docs
+                    })
+                }
+            })
         }
     } catch (err) {
         res.status(500).send("Server error: " + err.message);
